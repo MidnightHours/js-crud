@@ -1,0 +1,41 @@
+@use '../../lib/service.scss' as s;
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: s.space(6);
+    border: 1px solid s.color('border');
+    box-shadow: 5px 5px 10px 0px s.color('shadow');
+    border-radius: 20px;
+    padding: s.space(6);
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: s.space(4);
+    }
+
+    &__title {
+        color: s.color('title');
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    &__description {
+        color: s.color('text');
+        font-size: 16px;
+    }
+
+    &__button {
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        color: s.color('light');
+        padding: s.space(4);
+        background-color: s.color('primary');
+        border-radius: 8px;
+    }
+}
+
+
+  
