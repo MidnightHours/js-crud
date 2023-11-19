@@ -1,3 +1,4 @@
+
 @use '../../lib/service.scss' as s;
 
 body {
@@ -19,4 +20,8 @@ body {
     flex-direction: column;
     margin-top: s.space(15);
     gap: s.space(20);
+=======
+body {
+    font-family: 'Roboto', sans-serif;
+
 }
