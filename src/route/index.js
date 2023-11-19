@@ -4,67 +4,25 @@ const express = require('express')
 const router = express.Router()
 
 // ================================================================
-class Product {
-  static #list = []
+// MAIN PAGE======================================================
 
-  constructor(name, price, description) {
-    this.name = name
-    this.price = price
-    this.description = description
-    this.id = Math.floor(Math.random() * 90000) + 10000
-    this.createDate = new Date().toISOString()
-  }
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/', function (req, res) {
+  // res.render генерує нам HTML сторінку
 
-  static getList = () => this.#list
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('index', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'index',
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
 
-  static add = (product) => {
-    this.#list.push(product)
-  }
+//===================================================================
+//===================================================================
 
-  static getById = (id) =>
-    this.#list.find((product) => product.id === id)
-
-  static updateById = (id, { data }) => {
-    const product = this.getById(id)
-
-    if (product) {
-      this.update(product, data)
-
-      return true
-    } else {
-      return false
-    }
-  }
-
-  static update = (
-    product,
-    { name, price, description },
-  ) => {
-    if (name) {
-      product.name = name
-    }
-    if (price) {
-      product.price = price
-    }
-    if (description) {
-      product.description = description
-    }
-  }
-
-  static deleteById = (id) => {
-    const index = this.#list.findIndex(
-      (product) => product.id === id,
-    )
-
-    if (index !== -1) {
-      this.#list.splice(index, 1)
-      return true
-    } else {
-      return false
-    }
-  }
-}
-//=================================================================
+//===================================================================
+// USER===============================================================
 
 class User {
   static #list = []
@@ -124,15 +82,15 @@ class User {
 // router.get Створює нам один ентпоїнт
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
+router.get('/user', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   const list = User.getList()
 
   // ↙️ cюди вводимо назву файлу з сontainer
-  res.render('index', {
+  res.render('user', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-    style: 'index',
+    style: 'user',
 
     data: {
       users: {
@@ -194,6 +152,73 @@ router.post('/user-update', function (req, res) {
       : 'Сталася помилка',
   })
 })
+
+//================================================================
+//================================================================
+
+//================================================================
+// PRODUCT==========================================================
+
+class Product {
+  static #list = []
+
+  constructor(name, price, description) {
+    this.name = name
+    this.price = price
+    this.description = description
+    this.id = Math.floor(Math.random() * 90000) + 10000
+    this.createDate = new Date().toISOString()
+  }
+
+  static getList = () => this.#list
+
+  static add = (product) => {
+    this.#list.push(product)
+  }
+
+  static getById = (id) =>
+    this.#list.find((product) => product.id === id)
+
+  static updateById = (id, { data }) => {
+    const product = this.getById(id)
+
+    if (product) {
+      this.update(product, data)
+
+      return true
+    } else {
+      return false
+    }
+  }
+
+  static update = (
+    product,
+    { name, price, description },
+  ) => {
+    if (name) {
+      product.name = name
+    }
+    if (price) {
+      product.price = price
+    }
+    if (description) {
+      product.description = description
+    }
+  }
+
+  static deleteById = (id) => {
+    const index = this.#list.findIndex(
+      (product) => product.id === id,
+    )
+
+    if (index !== -1) {
+      this.#list.splice(index, 1)
+      return true
+    } else {
+      return false
+    }
+  }
+}
 
 // ================================================================
 router.get('/product-create', function (req, res) {
@@ -303,6 +328,19 @@ router.get('/product-delete', function (req, res) {
   }
 })
 
+//================================================================
+//================================================================
+
+//================================================================
+// NEW========================================================
+
+//================================================================
+//================================================================
+
+//================================================================
+// NEW========================================================
+
+//================================================================
 //================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router

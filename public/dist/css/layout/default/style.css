@@ -2,7 +2,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-
 .page {
   padding: 0 15px;
   display: flex;
@@ -16,6 +15,10 @@ body {
   flex-direction: column;
   margin-top: 60px;
   gap: 80px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */
