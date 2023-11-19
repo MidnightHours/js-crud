@@ -1,3 +1,27 @@
+
+@use '../../lib/service.scss' as s;
+
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+.page {
+    background-color: s.color('white');
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+} 
+
+.page_content {
+    max-width: 960px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    margin-top: s.space(15);
+    gap: s.space(20);
+=======
+body {
+    font-family: 'Roboto', sans-serif;
+
 }

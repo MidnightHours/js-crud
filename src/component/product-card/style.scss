@@ -1,0 +1,44 @@
+@use '../../lib/service.scss' as s;
+
+
+.product__card {
+        width: 31%;
+        display: grid;
+        gap: s.space(4);
+        border: 1px solid s.color('border');
+        box-shadow: 5px 5px 10px 0px s.color('shadow');
+        border-radius: 20px;
+        padding: s.space(4);
+
+        &__title {
+            font-size: 20px;
+            font-weight: bold;
+            color: s.color('title');
+        }
+    
+        &__description {
+            font-size: 18px;
+            color: s.color('text');
+        }
+    
+        &__id {
+            font-size: 16px;
+            color: s.color('info');
+        }
+    
+        &__price {
+            font-size: 20px;
+            font-weight: bold;
+            color: s.color('title');
+        }
+    
+        &__button {
+            text-decoration: none;
+            font-size: 16px;
+            color: s.color('primary');
+        }
+    
+   
+    }
+
+    

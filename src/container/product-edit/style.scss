@@ -1,0 +1,95 @@
+@use '../../lib/service.scss' as s;
+
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: s.space(4);
+    gap: s.space(8);
+    
+    
+    &__title {
+        font-size: 32px;
+        font-weight: bold;
+        padding-bottom: s.space(1);
+        color: s.color('primary');
+       
+    }
+
+    &__content {
+        display: grid;
+        gap: s.space(6);
+        border: 1px solid s.color('border');
+        box-shadow: 5px 5px 10px 0px s.color('shadow');
+        border-radius: 20px;
+        padding: s.space(6);
+
+        &_title {
+            font-size: 24px;
+            font-weight: bold;
+            color: s.color('title');
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: s.space(2);
+    }
+
+    &__item1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: s.space(2);
+        justify-content: stretch;
+    }
+
+    &__item3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: s.space(2);
+        justify-content: stretch;
+
+    }
+
+
+    &__label {
+        font-size: 18px;
+        color: s.color('text');
+    }
+
+    &__input {
+        border: 1px solid s.color('border');
+        padding: s.space(2);
+
+        &_description {
+            height: 60px;
+        }
+    }
+
+    &__info {
+        font-size: 12px;
+        color: s.color('info');
+    }
+
+
+
+    &__button {
+        text-decoration: none;
+        text-align: center;
+        font-size: 18px;
+        color: s.color('light');
+        padding: s.space(2);
+        border-radius: 8px;
+    }
+
+    
+}
+
+.button_add {
+    background-color: s.color('primary');
+    
+}
+
+.button_delete {
+    background-color: s.color('danger');
+}
