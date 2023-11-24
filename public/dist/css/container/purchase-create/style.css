@@ -1,0 +1,78 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.heading__title {
+  font-size: 36px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  color: #6932FF;
+}
+.heading__info {
+  font-size: 20px;
+  padding-bottom: 4px;
+  color: #6C757D;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field__label {
+  font-size: 18px;
+  color: #343A40;
+}
+.field__input {
+  border: 1px solid #D3DEE9;
+  padding: 8px;
+}
+.field__input_description {
+  height: 60px;
+}
+.field--disabled {
+  position: absolute;
+  display: none;
+}
+
+.purchase-card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 40px;
+  border: 1px solid #D3DEE9;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 5px 5px 10px 0px #aeafb1;
+}
+.purchase-card__button {
+  text-decoration: none;
+  font-size: 20px;
+  color: #6932FF;
+  border: 1px solid #6932FF;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: #6932FF;
+  color: #ebe7e7;
+}
+.purchase-card__total {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #D3DEE9;
+}
+.cart__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #343A40;
+}
+
+/*# sourceMappingURL=style.css.map */

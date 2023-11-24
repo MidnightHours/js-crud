@@ -1,0 +1,23 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../component/purchase-product-card/style.scss' as createdProductCard;
+@use '../../component/heading/style.scss' as heading;
+
+.list{
+    display: flex;
+    flex-direction: column;
+    padding: s.space(4);
+    gap: s.space(10);
+    
+
+
+}
+
+
+.product-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  
+    gap: s.space(6);
+}

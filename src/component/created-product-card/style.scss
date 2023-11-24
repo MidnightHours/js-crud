@@ -1,7 +1,7 @@
 @use '../../lib/service.scss' as s;
 
 
-.product__card {
+.product-card {
         width: 31%;
         display: grid;
         gap: s.space(4);
@@ -39,6 +39,12 @@
         }
     
    
+    }
+
+    .item1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     

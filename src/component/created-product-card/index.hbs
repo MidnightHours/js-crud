@@ -1,0 +1,12 @@
+{{#each list}}
+<div class="product-card">
+
+    <h2 class="product-card__title">{{name}}</h2>
+    <div class="product-card__description">{{description}}</div>
+    <div class="product-card__id">ID:{{id}}</div>
+    <div class="item1">
+        <div class="product-card__price">{{price}} ₴</div>
+        <a class="product-card__button" href="/product-edit?id={{id}}">Редагувати</a>
+    </div>
+</div>
+{{/each}}

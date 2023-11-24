@@ -1,0 +1,46 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../component/heading/style.scss' as heading;
+@use '../../component/field/style.scss' as field;
+
+.purchase-list {
+    display: flex;
+    flex-direction: column;
+    padding: s.space(4);
+    gap: s.space(10);
+    border: 1px solid s.color("border");
+    border-radius: 8px;
+    padding: s.space(6);
+    box-shadow: 5px 5px 10px 0px s.color('shadow');
+
+    &__card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: s.space(5);
+        border-bottom: 1px solid s.color('border');
+        padding-bottom: s.space(8);
+        text-decoration: none;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: s.space(4);
+        font-size: 20px;
+
+        &--label {
+            color: s.color("info");
+        }
+
+        &--value {
+            color: s.color("text");
+            font-weight: bold;
+        }
+    }
+
+ 
+    
+}
+
+
