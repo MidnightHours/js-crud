@@ -1,0 +1,50 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../component/heading/style.scss' as heading;
+@use '../../component/field/style.scss' as field;
+
+.purchase-card {
+    display: flex;
+    flex-direction: column;
+    padding: s.space(4);
+    gap: s.space(10);
+    border: 1px solid s.color("border");
+    border-radius: 8px;
+    padding: s.space(6);
+    box-shadow: 5px 5px 10px 0px s.color('shadow');
+
+    &__button {
+        text-decoration: none;
+        font-size: 20px;
+        color: s.color('primary');
+        border: 1px solid s.color("primary");
+        border-radius: 4px;
+        padding: s.space(4);
+        background-color: s.color("primary");
+        color: s.color("light");
+    
+    }
+
+    &__total {
+        font-size: 32px;
+        font-weight: bold;
+    }
+   
+    
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap:  s.space(4);
+    padding-bottom: s.space(4);
+    border-bottom: 1px solid s.color("border");
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        color: s.color("text");
+    }
+}
+

@@ -5,9 +5,11 @@
 
 <main>
   <section>
+
+
     <div class="list">
 
-      <h1 class="list__title">Список товарів</h1>
+      {{> heading title='Список товарів'}}
 
       {{#with data.products}}
       {{#if isEmpty}}
@@ -15,7 +17,7 @@
       {{else}}
 
       <div class="product">
-        {{> product-card }}
+        {{> created-product-card }}
       </div>
       {{/if}}
       {{/with}}

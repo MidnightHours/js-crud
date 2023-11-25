@@ -1,0 +1,72 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.heading__title {
+  font-size: 36px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  color: #6932FF;
+}
+.heading__info {
+  font-size: 20px;
+  padding-bottom: 4px;
+  color: #6C757D;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field__label {
+  font-size: 18px;
+  color: #343A40;
+}
+.field__input {
+  border: 1px solid #D3DEE9;
+  padding: 8px;
+}
+.field__input_description {
+  height: 60px;
+}
+.field--disabled {
+  position: absolute;
+  display: none;
+}
+
+.purchase-list {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 40px;
+  border: 1px solid #D3DEE9;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 5px 5px 10px 0px #aeafb1;
+}
+.purchase-list__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #D3DEE9;
+  padding-bottom: 32px;
+  text-decoration: none;
+}
+.purchase-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 20px;
+}
+.purchase-list__item--label {
+  color: #6C757D;
+}
+.purchase-list__item--value {
+  color: #343A40;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

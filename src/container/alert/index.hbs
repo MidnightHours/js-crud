@@ -3,13 +3,15 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
 
+{{#with data}}
 <div class="info">
   <div class="info__text">
     <h1 class="info__title">{{info}}</h1>
     <div class="info__description">{{description}}</div>
   </div>
-  <a class="info__button" href="/product-list">Повернутися назад</a>
+  <a class="info__button" href={{backLink}}>Повернутися назад</a>
 </div>
+{{/with}}
 
 {{!
 Цей код містить лише те, що буде виводитись в

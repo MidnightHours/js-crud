@@ -1,45 +1,20 @@
-.form {
+.content_list {
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  gap: 32px;
+  align-items: center;
+  gap: 28px;
 }
-.form__title {
-  font-size: 20px;
-  font-weight: bolt;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #ddd;
-}
-.form__content {
-  display: grid;
-  gap: 24px;
-}
-.form__field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.form__label {
-  font-size: 14px;
-}
-.form__input {
-  border: 1px solid #ddd;
+
+.button {
+  text-decoration: none;
+  border: 1px solid #6932FF;
   padding: 8px;
-}
-.form__button {
-  border: 1px solid #ddd;
-  padding: 8px;
-  border-radius: 20px;
-}
-.form main {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.form .user-list li {
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  min-width: 360px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 32px;
+  color: #ebe7e7;
+  background-color: #6932FF;
 }
 
 /*# sourceMappingURL=style.css.map */
