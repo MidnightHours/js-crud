@@ -2,10 +2,19 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.body--light {
+  background-color: #ebe7e7;
+}
+
+.body--dark {
+  background-color: #121212;
+  color: #ebe7e7;
+}
+
 .page {
-  padding: 0 15px;
   display: flex;
   justify-content: center;
+  padding: 0 15px;
 }
 
 .page_content {

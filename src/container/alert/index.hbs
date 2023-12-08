@@ -5,11 +5,11 @@
 
 {{#with data}}
 <div class="info">
-  <div class="info__text">
+  <div class="info__text info__text--{{../theme}}">
     <h1 class="info__title">{{info}}</h1>
     <div class="info__description">{{description}}</div>
   </div>
-  <a class="info__button" href={{backLink}}>Повернутися назад</a>
+  <a class="info__button info__button--{{../theme}}" href={{backLink}}>Повернутися назад</a>
 </div>
 {{/with}}
 

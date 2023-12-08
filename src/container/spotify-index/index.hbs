@@ -1,0 +1,42 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+<main class="main">
+
+  <div class="header">
+    <h1 class="title--big">Моя бібліотека</h1>
+    <a href="spotify-search">
+      <img src=" /svg/search_button.svg">
+    </a>
+    <a href="spotify-choose">
+      <img src=" /svg/add_button.svg">
+    </a>
+  </div>
+
+  {{#if playlists}}
+  <ul class="playlist__list">
+    {{#each playlists}}
+    <li class="playlist__item">
+      <img src="{{image}}" alt="">
+      <strong class="playlist__name">Мій плейліст "{{name}}"</strong>
+      <em class="playlist__length">Кількість пісень: {{tracks.length}}</em>
+    </li>
+    {{/each}}
+  </ul>
+
+  {{else}}
+  <strong class="title">У вас ще немає плейлистів, створіть новий</strong>
+
+  {{/if}}
+
+
+
+</main>
+
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+  Адже наш layout/default.hbs має вже структуру HTML
+  }}
