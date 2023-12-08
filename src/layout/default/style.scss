@@ -5,11 +5,20 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.body--light {
+    background-color: s.color(light);
+    
+}
+
+.body--dark {
+    background-color: s.color(dark);
+    color: s.color(light);
+}
+
 .page {
-    background-color: s.color('white');
-    padding: 0 15px;
     display: flex;
     justify-content: center;
+    padding: 0 15px;
 } 
 
 .page_content {
@@ -17,7 +26,7 @@ body {
     width: 100%;
 
     display: flex;
-    flex-direction: column;
+   flex-direction: column;
     margin-top: s.space(15);
     gap: s.space(20);
 }

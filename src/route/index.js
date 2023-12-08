@@ -223,6 +223,7 @@ router.post('/product-create', function (req, res) {
 
   res.render('alert', {
     style: 'alert',
+    theme: 'light',
     data: {
       info: 'Успішне виконання дії',
       description: 'Товар був успішно доданий',
@@ -262,6 +263,7 @@ router.get('/product-edit', function (req, res) {
   } else {
     res.render('alert', {
       style: 'alert',
+      theme: 'light',
       data: {
         info: 'Помилка',
         description: 'Не вдалося додати товар',
@@ -285,6 +287,7 @@ router.post('/product-edit', function (req, res) {
 
     res.render('alert', {
       style: 'alert',
+      theme: 'light',
       data: {
         info: 'Успішне виконання дії',
         description: 'Товар було успішно відредаговано',
@@ -294,6 +297,7 @@ router.post('/product-edit', function (req, res) {
   } else {
     res.render('alert', {
       style: 'alert',
+      theme: 'light',
       data: {
         info: 'Помилка:',
         description: ' Товар з таким ID не знайдено',
@@ -310,6 +314,7 @@ router.get('/product-delete', function (req, res) {
   if (deleted) {
     res.render('alert', {
       style: 'alert',
+      theme: 'light',
       data: {
         info: 'Успішне виконання дії',
         description: 'Товар був успішно видалений',
@@ -319,6 +324,7 @@ router.get('/product-delete', function (req, res) {
   } else {
     res.render('alert', {
       style: 'alert',
+      theme: 'light',
       data: {
         info: 'Помилка:',
         description: ' Товар з таким ID не знайдено',
@@ -596,6 +602,7 @@ router.post('/purchase-create', function (req, res) {
   if (amount < 1) {
     return res.render('alert', {
       style: 'alert',
+      theme: 'light',
 
       data: {
         info: 'Помилка:',
@@ -611,6 +618,7 @@ router.post('/purchase-create', function (req, res) {
     {
       return res.render('alert', {
         style: 'alert',
+        theme: 'light',
 
         data: {
           info: 'Помилка',
@@ -678,6 +686,7 @@ router.post('/purchase-submit', function (req, res) {
   if (!product) {
     return res.render('alert', {
       style: 'alert',
+      theme: 'light',
 
       data: {
         info: 'Помилка',
@@ -690,6 +699,7 @@ router.post('/purchase-submit', function (req, res) {
   if (product.amount < amount) {
     return res.render('alert', {
       style: 'alert',
+      theme: 'light',
 
       data: {
         info: 'Помилка',
@@ -714,6 +724,7 @@ router.post('/purchase-submit', function (req, res) {
   ) {
     return res.render('alert', {
       style: 'alert',
+      theme: 'light',
 
       data: {
         info: 'Помилка',
@@ -726,6 +737,7 @@ router.post('/purchase-submit', function (req, res) {
   if (!firstname || !lastname || !phone || !email) {
     return res.render('alert', {
       style: 'alert',
+      theme: 'light',
 
       data: {
         info: 'Помилка',
@@ -784,6 +796,7 @@ router.post('/purchase-submit', function (req, res) {
 
   res.render('alert', {
     style: 'alert',
+    theme: 'light',
 
     data: {
       info: 'Успішно',
@@ -792,9 +805,7 @@ router.post('/purchase-submit', function (req, res) {
     },
   })
 })
-
 //================================================================
-
 router.get('/purchase-list', function (req, res) {
   const purchasesData = Purchase.getList().map(
     (purchase) => {
@@ -815,9 +826,7 @@ router.get('/purchase-list', function (req, res) {
     },
   })
 })
-
 //================================================================
-
 router.get('/purchase-info', function (req, res) {
   const id = Number(req.query.id)
 
@@ -826,6 +835,7 @@ router.get('/purchase-info', function (req, res) {
   if (!purchase) {
     return res.render('alert', {
       style: 'alert',
+      theme: 'light',
       data: {
         info: 'Помилка',
         description: 'Замовлення не знайдено',
@@ -856,9 +866,7 @@ router.get('/purchase-info', function (req, res) {
     },
   })
 })
-
 //================================================================
-
 router.get('/purchase-edit', function (req, res) {
   const { id } = req.query
 
@@ -874,6 +882,8 @@ router.get('/purchase-edit', function (req, res) {
   } else {
     res.render('alert', {
       style: 'alert',
+      theme: 'light',
+
       data: {
         info: 'Помилка',
         description: 'Не вдалося змінити дані',
@@ -905,6 +915,8 @@ router.post('/purchase-edit', function (req, res) {
 
     res.render('alert', {
       style: 'alert',
+      theme: 'light',
+
       data: {
         info: 'Успішне виконання дії',
         description:
@@ -915,6 +927,8 @@ router.post('/purchase-edit', function (req, res) {
   } else {
     res.render('alert', {
       style: 'alert',
+      theme: 'light',
+
       data: {
         info: 'Помилка:',
         description: ' Замовлення з таким ID не знайдено',
@@ -927,9 +941,355 @@ router.post('/purchase-edit', function (req, res) {
 //================================================================
 
 //================================================================
-// NEW========================================================
+// SPOTIFY========================================================
+
+class Track {
+  static #list = []
+
+  constructor(name, author, image) {
+    this.id = Math.floor(1000 + Math.random() * 9000)
+    this.name = name
+    this.author = author
+    this.image = image
+  }
+
+  static create(name, author, image) {
+    const newTrack = new Track(name, author, image)
+    this.#list.push(newTrack)
+    return newTrack
+  }
+
+  static getList() {
+    return this.#list.reverse()
+  }
+}
+
+Track.create(
+  'Інь Ян',
+  'MONATIK і ROXOLANA',
+  `https://picsum.photos/100/100`,
+)
+
+Track.create(
+  'Baila Conmigo (Remix)',
+  'Selena Gomez і Rauw Alejandro',
+  `https://picsum.photos/100/100`,
+)
+
+Track.create(
+  'Shameless',
+  'Camila Cabello ',
+  `https://picsum.photos/100/100`,
+)
+
+Track.create(
+  'DÁKITI',
+  'BAD BUNNY і JHAY',
+  `https://picsum.photos/100/100`,
+)
+
+Track.create(
+  '11 PM',
+  'Maluma',
+  `https://picsum.photos/100/100`,
+)
+
+Track.create(
+  'Інша любов',
+  'Enleo',
+  `https://picsum.photos/100/100`,
+)
+
+console.log(Track.getList())
+
+//=================================================================================
+
+class Playlist {
+  static #list = []
+
+  constructor(name) {
+    this.id = Math.floor(1000 + Math.random() * 9000)
+    this.name = name
+    this.tracks = []
+    this.image = `https://picsum.photos/300/300`
+  }
+
+  static create(name) {
+    const newPlaylist = new Playlist(name)
+    this.#list.push(newPlaylist)
+    return newPlaylist
+  }
+
+  static getList() {
+    return this.#list.reverse()
+  }
+
+  static makeMix(playlist) {
+    const allTracks = Track.getList()
+
+    let randomTracks = allTracks
+      .sort(() => 0.5 - Math.random)
+      .slice(0, 3)
+
+    playlist.tracks.push(...randomTracks)
+  }
+
+  static getById(id) {
+    return (
+      Playlist.#list.find(
+        (playlist) => playlist.id === id,
+      ) || null
+    )
+  }
+
+  deleteTrackById(trackId) {
+    this.tracks = this.tracks.filter(
+      (track) => track.id !== trackId,
+    )
+  }
+
+  addTrackById(trackId) {
+    const track = Track.getList().find(
+      (t) => t.id === trackId,
+    )
+
+    if (track) {
+      this.tracks.push(track)
+    }
+  }
+
+  static findListByValue(name) {
+    return this.#list.filter((playlist) =>
+      playlist.name
+        .toLowerCase()
+        .includes(name.toLowerCase()),
+    )
+  }
+}
 
 //================================================================
+router.get('/spotify-choose', function (req, res) {
+  res.render('spotify-choose', {
+    style: 'spotify-choose',
+    theme: 'dark',
+  })
+})
+//================================================================
+router.get('/spotify-create', function (req, res) {
+  const isMix = !!req.query.isMix
+
+  console.log(isMix)
+
+  res.render('spotify-create', {
+    style: 'spotify-create',
+    theme: 'dark',
+
+    data: {
+      isMix,
+    },
+  })
+})
+//======== ======================================================
+router.post('/spotify-create', function (req, res) {
+  const isMix = !!req.query.isMix
+
+  const name = req.body.name
+
+  if (!name) {
+    return res.render('alert', {
+      style: 'alert',
+      theme: 'dark',
+
+      data: {
+        info: 'Помилка',
+        description: 'Введіть назву плейліста',
+        backLink: isMix
+          ? '/spotify-create?isMix=true'
+          : '/spotify-create',
+      },
+    })
+  }
+
+  const playlist = Playlist.create(name)
+
+  if (isMix) {
+    Playlist.makeMix(playlist)
+  }
+
+  console.log(playlist)
+
+  res.render('spotify-playlist', {
+    style: 'spotify-playlist',
+    theme: 'dark',
+
+    data: {
+      playlistId: playlist.id,
+      tracks: playlist.tracks,
+      name: playlist.name,
+    },
+  })
+})
+//===============================================================
+router.get('/spotify-playlist', function (req, res) {
+  const id = Number(req.query.id)
+
+  const playlist = Playlist.getById(id)
+
+  if (!playlist) {
+    return res.render('alert', {
+      style: 'alert',
+      theme: 'dark',
+
+      data: {
+        info: 'Помилка',
+        description: 'Плейліст не знайдено',
+        backLink: '/spotify-choose',
+      },
+    })
+  }
+
+  res.render('spotify-playlist', {
+    style: 'spotify-playlist',
+    theme: 'dark',
+
+    data: {
+      playlistId: playlist.id,
+      tracks: playlist.tracks,
+      name: playlist.name,
+    },
+  })
+})
+//===============================================================
+router.get('/spotify-track-delete', function (req, res) {
+  const playlistId = Number(req.query.playlistId)
+  const trackId = Number(req.query.trackId)
+
+  const playlist = Playlist.getById(playlistId)
+
+  if (!playlist) {
+    return res.render('alert', {
+      style: 'alert',
+      theme: 'dark',
+
+      data: {
+        info: 'Помилка',
+        description: 'Плейліст не знайдено',
+        backLink: '/spotify-playlist?id=${playlistId}',
+      },
+    })
+  }
+
+  playlist.deleteTrackById(trackId)
+
+  res.render('spotify-playlist', {
+    style: 'spotify-playlist',
+    theme: 'dark',
+
+    data: {
+      playlistId: playlist.id,
+      tracks: playlist.tracks,
+      name: playlist.name,
+    },
+  })
+})
+//================================================================
+router.get('/spotify-playlist-add', function (req, res) {
+  const playlistId = Number(req.query.playlistId)
+
+  const playlist = Playlist.getById(playlistId)
+
+  res.render('spotify-playlist-add', {
+    style: 'spotify-playlist-add',
+    theme: 'dark',
+
+    data: {
+      playlistId: playlist.id,
+      tracks: Track.getList(),
+    },
+  })
+})
+//================================================================
+router.get('/spotify-track-add', function (req, res) {
+  const playlistId = Number(req.query.playlistId)
+  const trackId = Number(req.query.trackId)
+
+  const playlist = Playlist.getById(playlistId)
+
+  if (!playlist) {
+    return res.render('alert', {
+      style: 'alert',
+      theme: 'dark',
+
+      data: {
+        info: 'Помилка',
+        description: 'Плейліст не знайдено',
+        backLink: '/spotify-playlist?id=${playlistId}',
+      },
+    })
+  }
+
+  playlist.addTrackById(trackId)
+
+  res.render('spotify-playlist', {
+    style: 'spotify-playlist',
+    theme: 'dark',
+
+    data: {
+      playlistId: playlist.id,
+      tracks: playlist.tracks,
+      name: playlist.name,
+    },
+  })
+})
+//================================================================
+router.get('/spotify-index', function (req, res) {
+  res.render('spotify-index', {
+    style: 'spotify-index',
+    theme: 'dark',
+
+    playlists: Playlist.getList(),
+  })
+})
+//================================================================
+router.get('/spotify-search', function (req, res) {
+  const value = ''
+
+  const list = Playlist.findListByValue(value)
+
+  res.render('spotify-search', {
+    style: 'spotify-search',
+    theme: 'dark',
+
+    data: {
+      list: list.map(({ tracks, ...rest }) => ({
+        ...rest,
+        amount: tracks.length,
+      })),
+      value,
+    },
+  })
+})
+//================================================================
+router.post('/spotify-search', function (req, res) {
+  const value = req.body.value || ''
+
+  const list = Playlist.findListByValue(value)
+
+  console.log(value)
+
+  res.render('spotify-search', {
+    style: 'spotify-search',
+    theme: 'dark',
+
+    data: {
+      list: list.map(({ tracks, ...rest }) => ({
+        ...rest,
+        amount: tracks.length,
+      })),
+      value,
+    },
+  })
+})
 //================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router

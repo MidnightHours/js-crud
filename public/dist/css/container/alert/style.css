@@ -6,29 +6,37 @@
   box-shadow: 5px 5px 10px 0px #aeafb1;
   border-radius: 20px;
   padding: 24px;
+  max-height: fit-content;
 }
 .info__text {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+.info__text--dark {
+  color: #ebe7e7;
+}
 .info__title {
-  color: #212529;
   font-size: 20px;
   font-weight: bold;
 }
 .info__description {
-  color: #343A40;
   font-size: 16px;
 }
 .info__button {
   text-decoration: none;
   text-align: center;
   font-size: 20px;
-  color: #ebe7e7;
   padding: 16px;
-  background-color: #6932FF;
   border-radius: 8px;
+}
+.info__button--light {
+  color: #ebe7e7;
+  background-color: #6932FF;
+}
+.info__button--dark {
+  background-color: #20D562;
+  color: #121212;
 }
 
 /*# sourceMappingURL=style.css.map */

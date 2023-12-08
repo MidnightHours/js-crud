@@ -9,20 +9,24 @@
     border-radius: 20px;
     padding: s.space(6);
 
+    max-height: fit-content;
+
     &__text {
         display: flex;
         flex-direction: column;
         gap: s.space(4);
+
+        &--dark {
+            color: s.color(light);
+        }
     }
 
     &__title {
-        color: s.color('title');
         font-size: 20px;
         font-weight: bold;
     }
 
     &__description {
-        color: s.color('text');
         font-size: 16px;
     }
 
@@ -30,10 +34,19 @@
         text-decoration: none;
         text-align: center;
         font-size: 20px;
-        color: s.color('light');
+       
         padding: s.space(4);
-        background-color: s.color('primary');
         border-radius: 8px;
+
+        &--light {
+            color: s.color('light');
+            background-color: s.color('primary');
+        }
+
+        &--dark {
+            background-color: s.color("success");
+            color: s.color(dark);
+        }
     }
 }
 
